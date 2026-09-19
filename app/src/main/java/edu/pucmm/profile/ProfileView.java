@@ -1,6 +1,7 @@
 package edu.pucmm.profile;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -52,18 +53,20 @@ public class ProfileView extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void validationAndSave() {
         AtomicBoolean validated = new AtomicBoolean(true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-            if (binding.txtname.getText().isEmpty()) {
-                binding.txtname.setError("El nombre es obligatorio");
-                validated.set(false);
-            }
+
+        String name = binding.txtname.getText().toString().trim();
+        String id = binding.txtId.getText().toString().trim();
+
+        if(name.isEmpty()){
+            binding.txtname.setError("El nombre es obligatorio");
+            validated.set(false);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-            if (binding.txtId.getText().isEmpty()) {
-                binding.txtId.setError("La matricula es obligatoria");
-                validated.set(false);
-            }
+
+        if(id.isEmpty()){
+            binding.txtId.setError("La matricula es obligatoria");
+            validated.set(false);
         }
+
         if (binding.cbmCareer.getSelectedItemPosition() == 0) {
             TextView errorText = (TextView) binding.cbmCareer.getSelectedView();
             if (errorText != null) {
@@ -75,6 +78,13 @@ public class ProfileView extends AppCompatActivity {
 
         if(validated.get()){
             Toast.makeText(this, "Perfil Guardado Correctamente", Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, SummaryActivity.class);
+            intent.putExtra(SummaryActivity.Nombre, name);
+            intent.putExtra(SummaryActivity.Id, id);
+            intent.putExtra(SummaryActivity.Carrera, (String)binding.cbmCareer.getSelectedItem());
+
+            startActivity(intent);
         }
     }
 }

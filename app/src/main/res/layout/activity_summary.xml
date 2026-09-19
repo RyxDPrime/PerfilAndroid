@@ -6,64 +6,71 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/profileIcon"
         android:layout_width="0dp"
         android:layout_height="108dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="84dp"
+        android:layout_marginEnd="152dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="151dp" />
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="177dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/profileIcon"
+        tools:text="¡Hola, Juan!"/>
 
     <TextView
-        android:id="@+id/strlbl"
+        android:id="@+id/InfoLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Aquí está tu información"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
-        tools:layout_editor_absoluteX="123dp" />
+        android:layout_marginEnd="124dp"
+        android:text="@string/summarySubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/idIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/nameIcon"
         app:srcCompat="@drawable/outline_badge_24" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/nameIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="66dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strlbl"
+        app:layout_constraintTop_toBottomOf="@+id/InfoLbl"
         app:srcCompat="@drawable/baseline_person_24" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/careerIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="41dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/idIcon"
         app:srcCompat="@drawable/outline_book_24" />
 
     <TextView
@@ -72,9 +79,10 @@
         android:layout_height="14dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="66dp"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/strlbl" />
+        android:textStyle="bold"
+        android:text="@string/summaryLblName"
+        app:layout_constraintStart_toEndOf="@+id/nameIcon"
+        app:layout_constraintTop_toBottomOf="@+id/InfoLbl" />
 
     <TextView
         android:id="@+id/lblidgreet"
@@ -82,59 +90,64 @@
         android:layout_height="14dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="38dp"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textStyle="bold"
+        android:text="@string/summaryLblId"
+        app:layout_constraintStart_toEndOf="@+id/idIcon"
+        app:layout_constraintTop_toBottomOf="@+id/nametxt" />
 
     <TextView
-        android:id="@+id/lblcmbgreet"
+        android:id="@+id/lblcareergreet"
         android:layout_width="109dp"
         android:layout_height="14dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="6dp"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:textStyle="bold"
+        android:text="@string/summaryLblCareer"
+        app:layout_constraintBottom_toTopOf="@+id/careertxt"
+        app:layout_constraintStart_toEndOf="@+id/careerIcon"
+        app:layout_constraintTop_toBottomOf="@+id/idtxt" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nametxt"
         android:layout_width="108dp"
         android:layout_height="22dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/lblnamegreet" />
+        app:layout_constraintStart_toEndOf="@+id/nameIcon"
+        app:layout_constraintTop_toBottomOf="@+id/lblnamegreet"
+        tools:text="Juan Perez"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/idtxt"
         android:layout_width="109dp"
         android:layout_height="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/lblidgreet" />
+        app:layout_constraintStart_toEndOf="@+id/idIcon"
+        app:layout_constraintTop_toBottomOf="@+id/lblidgreet"
+        tools:text="1015"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/careertxt"
         android:layout_width="109dp"
         android:layout_height="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="6dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/lblcmbgreet" />
+        app:layout_constraintStart_toEndOf="@+id/careerIcon"
+        app:layout_constraintTop_toBottomOf="@+id/lblcareergreet"
+        tools:text="Computacion"/>
 
     <Button
         android:id="@+id/editbtn"
         android:layout_width="170dp"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="121dp"
         android:layout_marginTop="36dp"
-        android:text="Editar"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="120dp" />
+        android:layout_marginEnd="121dp"
+        android:text="@string/btnEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/careertxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

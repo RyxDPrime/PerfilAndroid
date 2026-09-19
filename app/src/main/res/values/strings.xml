@@ -6,4 +6,10 @@
     <string name="hintMatricula">Ej. 1015-2222</string>
     <string name="lblCarrer">Carrera</string>
     <string name="btnSave">Guardar</string>
+    <string name="summaryGreeting">¡Hola, %1$s!</string>
+    <string name="summarySubtitle">Aquí está tu información</string>
+    <string name="summaryLblName">Nombre:</string>
+    <string name="summaryLblId">Matrícula:</string>
+    <string name="summaryLblCareer">Carrera:</string>
+    <string name="btnEdit">Editar</string>
 </resources>

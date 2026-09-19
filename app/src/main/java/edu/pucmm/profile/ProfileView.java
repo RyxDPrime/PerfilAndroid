@@ -29,7 +29,7 @@ public class ProfileView extends AppCompatActivity {
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String[] arrays = {null, "Telematica", "Computacion", "Derecho"};
+        String[] arrays = {"Seleccione la carrera", "Telematica", "Computacion", "Derecho"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arrays);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -54,27 +54,27 @@ public class ProfileView extends AppCompatActivity {
         AtomicBoolean validated = new AtomicBoolean(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
             if (binding.txtname.getText().isEmpty()) {
-                binding.txtname.setError("El campo no puede estar vacio");
+                binding.txtname.setError("El nombre es obligatorio");
                 validated.set(false);
             }
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
             if (binding.txtId.getText().isEmpty()) {
-                binding.txtId.setError("El campo no puede estar vacio");
+                binding.txtId.setError("La matricula es obligatoria");
                 validated.set(false);
             }
         }
-        if(binding.cbmCareer.getSelectedItem() == null){
+        if (binding.cbmCareer.getSelectedItemPosition() == 0) {
             TextView errorText = (TextView) binding.cbmCareer.getSelectedView();
             if (errorText != null) {
                 errorText.setTextColor(android.graphics.Color.RED);
                 errorText.setText("Debes seleccionar una carrera");
-                validated.set(false);
             }
+            validated.set(false);
         }
 
         if(validated.get()){
-            Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Perfil Guardado Correctamente", Toast.LENGTH_LONG).show();
         }
     }
 }

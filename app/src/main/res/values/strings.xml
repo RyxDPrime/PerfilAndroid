@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Profile</string>
+    <string name="lblName">Nombre</string>
+    <string name="hintName">Ej. Juan Perez</string>
+    <string name="txtId">Matricula</string>
+    <string name="hintMatricula">Ej. 1015-2222</string>
+    <string name="lblCarrer">Carrera</string>
+    <string name="btnSave">Guardar</string>
+</resources>

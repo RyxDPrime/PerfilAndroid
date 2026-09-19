@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnSurfaceVariant"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
@@ -48,10 +49,11 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="43dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameIcon"
-        app:srcCompat="@drawable/outline_badge_24" />
+        app:srcCompat="@drawable/outline_badge_24"
+        app:tint="?attr/colorOnSurfaceVariant" />
 
     <ImageView
         android:id="@+id/nameIcon"
@@ -61,6 +63,7 @@
         android:layout_marginTop="66dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InfoLbl"
+        app:tint="?attr/colorOnSurfaceVariant"
         app:srcCompat="@drawable/baseline_person_24" />
 
     <ImageView
@@ -68,9 +71,10 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idIcon"
+        app:tint="?attr/colorOnSurfaceVariant"
         app:srcCompat="@drawable/outline_book_24" />
 
     <TextView
